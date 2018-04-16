@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Matchable</title>
+</head>
+<body>
+
+    <h1>Movies to watch</h1>
+    <h2>This collection belongs to {{ name }}</h2>
+
+    <p>movies : {{ movies }}</p>
+    <p>first : {{ movies[0] }}</p>
+    <p>slicing : {{ movies[1:] }}</p>
+
+    <hr>
+
+    <ul>
+        {% for item in movies %}
+            <li>the movies is : {{ item }}</li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>
