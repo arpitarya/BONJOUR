@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <h1>Filter in jinja2</h1>
+
+    <table>
+        <tr>
+            <td>Name</td>
+            <td>Rating</td>
+        </tr>
+
+        {% for movie, duration in movies|dictsort (false, 'value') %}
+            <tr>
+                <td>{{ movie|title }}</td>
+                <td>{{ duration|round(1) }}</td>
+            </tr>
+        {% endfor %}
+
+    </table>
+
+    <ol type = '1'>
+        <li>default value : {{ name|default('value not defined', true) }}</li><br/>
+        <li>capital case : {{ film|capitalize }}</li><br/>
+        <li>length : {{ movies|length }} items in the dictionary</li><br/>
+        <li>first item : {{ movies|first }}</li><br/>
+        <li>make a list : {{ film|list }}</li><br/>
+        <li>replace data : {{ film|replace('avengers', 'cookie') }}</li>
+    </ol>
+
+    <hr>
+    <h2>For more filters </h2>
+    <a href="http://jinja.pocoo.org/docs/2.9/templates/#builtin-filters">http://jinja.pocoo.org/docs/2.9/templates/#builtin-filters</a>
+
+</body>
+</html>

@@ -85,5 +85,41 @@ def movies_plus():
     )
 
 
+# jinja with tables
+@app.route('/filter')
+def filter_data():
+    movie_dict = {
+        'john wick': 02.14,
+        'the big bang': 2.30,
+        'king kong': 1.50,
+        'hello': 02.52,
+        'ghost in a shell: ': 1.90
+    }
+
+    return render_template(
+        'filter_data.html',
+        movies = movie_dict,
+        name = None,
+        film = 'the avengers'
+    )
+
+
+# macros
+@app.route('/macros')
+def jinja_macros():
+    movie_dict = {
+        'john wick': 02.14,
+        'the big bang': 2.30,
+        'king kong': 1.50,
+        'hello': 02.52,
+        'ghost in a shell: ': 1.90
+    }
+
+    return render_template(
+        'using_macros.html',
+        movies = movie_dict
+    )
+
+
 if __name__ == '__main__':
     app.run(debug = True)
