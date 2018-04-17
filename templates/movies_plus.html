@@ -2,9 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Movies Plus</title>
 </head>
 <body>
+
+    <h1>The list is provided by {{ name }}</h1>
+
+    <table>
+        <tr>
+            <td>Name</td>
+            <td>Rating</td>
+            <td>Comments</td>
+        </tr>
+
+        {% for movie, rating in movies.items() %}
+            <tr>
+                <td>{{ movie }}</td>
+                <td>{{ rating }}</td>
+
+                {% if rating < 5 %}
+                    <td>Poor</td>
+                {% elif rating < 8 %}
+                    <td>Average</td>
+                {% else %}
+                    <td style = "color:red">Good</td>
+                {% endif %}
+            </tr>
+        {% endfor %}
+
+    </table>
 
 </body>
 </html>
